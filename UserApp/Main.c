@@ -20,7 +20,14 @@ volatile uint8_t adc_m2_injected_updated;
 static volatile uint8_t as5600_read_request;
 static volatile uint8_t vofa_send_request;
 
+
+
+
 #define TIM4_AS5600_DIV     1U
+
+
+
+
 #define TIM4_VOFA_DIV       25U
 
 void Main(void)
