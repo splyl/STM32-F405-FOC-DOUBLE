@@ -1,0 +1,4 @@
+#ifndef CONTROL_CONFIG_H
+#define CONTROL_CONFIG_H
+
+#endif /* CONTROL_CONFIG_H */
