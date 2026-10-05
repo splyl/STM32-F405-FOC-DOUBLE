@@ -1,0 +1,4 @@
+#ifndef PLATFORM_FAULT_H
+#define PLATFORM_FAULT_H
+
+#endif /* PLATFORM_FAULT_H */

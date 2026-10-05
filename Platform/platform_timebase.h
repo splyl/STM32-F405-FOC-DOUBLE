@@ -1,0 +1,4 @@
+#ifndef PLATFORM_TIMEBASE_H
+#define PLATFORM_TIMEBASE_H
+
+#endif /* PLATFORM_TIMEBASE_H */

@@ -1,0 +1,4 @@
+#ifndef PLATFORM_CURRENT_H
+#define PLATFORM_CURRENT_H
+
+#endif /* PLATFORM_CURRENT_H */
