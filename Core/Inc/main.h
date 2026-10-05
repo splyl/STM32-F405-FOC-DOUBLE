@@ -69,8 +69,6 @@ void Error_Handler(void);
 #define ADC3_IN13_M1_B_GPIO_Port GPIOC
 #define ADC1_IN4_VCC_Pin GPIO_PIN_4
 #define ADC1_IN4_VCC_GPIO_Port GPIOA
-#define Key_Pin_Pin GPIO_PIN_5
-#define Key_Pin_GPIO_Port GPIOC
 #define OLED_SCL_Pin GPIO_PIN_13
 #define OLED_SCL_GPIO_Port GPIOB
 #define OLED_SDA_Pin GPIO_PIN_14
