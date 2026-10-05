@@ -45,16 +45,8 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
-    ${CMAKE_CURRENT_SOURCE_DIR}/UserApp/Main.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/Ctrl/Motor/foc_clark_park.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/Ctrl/Motor/FOC_PID.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/Ctrl/Motor/fast_trig.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/Ctrl/Motor/svpwm.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/UserApp/vofa_debug.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/Ctrl/Motor/motor.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/Ctrl/Sensor/as5600.c
-
     # Application framework
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/cubemx_entry.c
     ${CMAKE_CURRENT_SOURCE_DIR}/App/app_main.c
     ${CMAKE_CURRENT_SOURCE_DIR}/App/mc_scheduler.c
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Motor/motor_control.c
@@ -94,11 +86,6 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
-    ${CMAKE_CURRENT_SOURCE_DIR}/UserApp
-    ${CMAKE_CURRENT_SOURCE_DIR}/Port/Platform/Comm
-    ${CMAKE_CURRENT_SOURCE_DIR}/Ctrl/Motor
-    ${CMAKE_CURRENT_SOURCE_DIR}/Ctrl/Sensor
-
     ${CMAKE_CURRENT_SOURCE_DIR}/Config
     ${CMAKE_CURRENT_SOURCE_DIR}/Platform
     ${CMAKE_CURRENT_SOURCE_DIR}/Device/AS5600
