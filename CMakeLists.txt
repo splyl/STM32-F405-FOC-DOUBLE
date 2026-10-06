@@ -51,18 +51,18 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/App/mc_scheduler.c
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Motor/motor_control.c
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Motor/motor_state.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/App/Motor/motor_command.c
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Motor/motor_fault.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/App/Motor/motor_manager.c
 
     # Hardware adaptation and device drivers
     ${CMAKE_CURRENT_SOURCE_DIR}/Platform/platform_pwm.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Platform/platform_current.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Platform/platform_motor_hardware.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Platform/platform_timebase.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Platform/platform_encoder_port.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Platform/platform_uart.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Platform/platform_fault.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Platform/platform_exti.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Platform/platform_led.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Device/AS5600/as5600.c
 
     # Motor-control algorithms
