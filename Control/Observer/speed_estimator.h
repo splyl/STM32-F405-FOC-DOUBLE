@@ -1,0 +1,4 @@
+#ifndef SPEED_ESTIMATOR_H
+#define SPEED_ESTIMATOR_H
+
+#endif /* SPEED_ESTIMATOR_H */

@@ -45,14 +45,40 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
-    ${CMAKE_CURRENT_SOURCE_DIR}/UserApp/Main.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/Ctrl/Motor/foc_clark_park.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/Ctrl/Motor/FOC_PID.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/Ctrl/Motor/fast_trig.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/Ctrl/Motor/svpwm.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/UserApp/vofa_debug.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/Ctrl/Motor/motor.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/Ctrl/Sensor/as5600.c
+    # Application framework
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/cubemx_entry.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/app_main.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/mc_scheduler.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Motor/motor_control.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Motor/motor_state.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Motor/motor_fault.c
+
+    # Hardware adaptation and device drivers
+    ${CMAKE_CURRENT_SOURCE_DIR}/Platform/platform_pwm.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Platform/platform_current.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Platform/platform_motor_hardware.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Platform/platform_timebase.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Platform/platform_encoder_port.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Platform/platform_uart.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Platform/platform_fault.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Platform/platform_exti.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Platform/platform_led.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Device/AS5600/as5600.c
+
+    # Motor-control algorithms
+    ${CMAKE_CURRENT_SOURCE_DIR}/Control/Math/mc_transform.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Control/Math/mc_angle.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Control/Controller/pi_controller.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Control/Controller/current_controller.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Control/Controller/speed_controller.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Control/Modulation/svpwm.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Control/Observer/speed_estimator.c
+
+    # Communication protocol and telemetry
+    ${CMAKE_CURRENT_SOURCE_DIR}/Protocol/protocol.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Protocol/command_service.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Protocol/telemetry.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Protocol/vofa_backend.c
 
 
 )
@@ -60,10 +86,16 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
-    ${CMAKE_CURRENT_SOURCE_DIR}/UserApp
-    ${CMAKE_CURRENT_SOURCE_DIR}/Port/Platform/Comm
-    ${CMAKE_CURRENT_SOURCE_DIR}/Ctrl/Motor
-    ${CMAKE_CURRENT_SOURCE_DIR}/Ctrl/Sensor
+    ${CMAKE_CURRENT_SOURCE_DIR}/Config
+    ${CMAKE_CURRENT_SOURCE_DIR}/Platform
+    ${CMAKE_CURRENT_SOURCE_DIR}/Device/AS5600
+    ${CMAKE_CURRENT_SOURCE_DIR}/Control/Math
+    ${CMAKE_CURRENT_SOURCE_DIR}/Control/Controller
+    ${CMAKE_CURRENT_SOURCE_DIR}/Control/Modulation
+    ${CMAKE_CURRENT_SOURCE_DIR}/Control/Observer
+    ${CMAKE_CURRENT_SOURCE_DIR}/App
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Motor
+    ${CMAKE_CURRENT_SOURCE_DIR}/Protocol
 
 )
 
